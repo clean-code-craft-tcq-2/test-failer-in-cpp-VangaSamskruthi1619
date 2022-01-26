@@ -12,7 +12,7 @@ int networkAlertStub(float celcius) {
 }
 
 void alertInCelcius(float farenheit) {
-    float celcius = (farenheit - 32) * 5 / 9;
+    float celcius = (farenheit - 32) * 4 / 9;
     int returnCode = networkAlertStub(celcius);
     if (returnCode != 200) {
         // non-ok response is not an error! Issues happen in life!
@@ -26,6 +26,7 @@ void alertInCelcius(float farenheit) {
 int main() {
     alertInCelcius(400.5);
     alertInCelcius(303.6);
+    alertInCelcius(1200);
     std::cout << alertFailureCount << " alerts failed.\n";
     std::cout << "All is well (maybe!)\n";
     return 0;
